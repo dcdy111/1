@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面跳转中...</title>
+    <script>
+        // 判断是否为微信内置浏览器
+        function isWeixinBrowser() {
+            var ua = navigator.userAgent.toLowerCase();
+            return ua.indexOf('micromessenger') !== -1;
+        }
+        window.onload = function() {
+            if (isWeixinBrowser()) {
+                // 微信内置浏览器，跳转到企业微信用户界面
+                window.location.href = "https://work.weixin.qq.com/ca/cawcde1b1ec6a7aed8";
+            } else {
+                // 其他浏览器，跳转到微信小店商品页面
+                window.location.href = "https://store.weixin.qq.com/shop/a/TqgAmniGLwblPAb";
+            }
+        };
+    </script>
+    <style>
+        body { display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #f7f7f7; }
+        .msg { font-size: 1.2rem; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="msg">正在为您跳转页面，请稍候...</div>
+</body>
+</html> 
